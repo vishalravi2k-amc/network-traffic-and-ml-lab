@@ -1,3 +1,13 @@
+# Two separate coursework assignments — Gowthami.M (1AM23CI042)
+
+**1. Cryptography and Network Security — Theme E: Network Traffic Analysis:** The packet-analysis project is in [network/](network/) and the web deployment files are in [dist/](dist/). Use this project to demonstrate authorized localhost capture in Wireshark and basic protocol inspection. The network-traffic project report is [dist/report.pdf](dist/report.pdf).
+
+**2. Machine Learning — Three Datasets:** Use the separate [ml/](ml/) folder for training with insurance, social-network advertisements, and mall customers. See the [full algorithm results table](ml/COMPARISON_REPORT.md), [consolidated CSV](ml/results/all_algorithm_comparison.csv), [reproducible training code](ml/train_compare.py) and [ML instructions](ml/README.md).
+
+**These are two different subjects and should be submitted as two different assignments.** They currently share one GitHub repository; the GitHub connector cannot create a second repository directly.
+
+---
+
 # PacketScope — Network Traffic Analysis
 
 Theme E project by **Gowthami.M**, **USN 1AM23CI042**, AMC Engineering College, CSE (AI & ML).
