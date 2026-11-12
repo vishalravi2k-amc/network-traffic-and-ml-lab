@@ -6,7 +6,7 @@ A static browser application for analyzing classic PCAP files locally. Includes 
 
 ## Website and source
 
-- [Open the working website](https://gowthami-network-traffic.vishalravi20k.chatgpt.site/) (currently owner-private; sign in with the owning ChatGPT account).
+- **Website:** Netlify deployment is being configured. The public URL will be added once verified.
 - [GitHub repository](https://github.com/vishalravi2k-amc/network-traffic-and-ml-lab) (currently private).
 - [Project report PDF](dist/report.pdf)
 - [ML methods and result tables](ml/README.md)
