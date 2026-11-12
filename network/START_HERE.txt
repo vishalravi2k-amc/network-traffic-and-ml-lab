@@ -1,0 +1,13 @@
+NETWORK TRAFFIC ANALYSIS - THEME E
+
+1. Extract this ZIP on a laptop or lab computer.
+2. Install Python 3.10 or newer.
+3. Windows: double-click run_demo.bat.
+   Other systems: run python3 run_demo.py.
+4. Open README.md for the live Wireshark capture procedure.
+5. Read report/Network_Traffic_Analysis_Report.pdf.
+6. Read VIVA.md before presenting.
+
+The included sample is synthetic. Run generate_traffic.py while
+Wireshark is capturing loopback to create your own live evidence.
+Fill your roll number and faculty details before submission.

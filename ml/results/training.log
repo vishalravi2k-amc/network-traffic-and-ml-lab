@@ -1,0 +1,13 @@
+Regression: AdaBoost 4986.998349988725
+Regression: Gradient Boosting 4289.573065285522
+Regression: Histogram Gradient Boosting 4287.264250704026
+Classification: Logistic Regression 0.8375
+Classification: RBF SVM 0.9625
+Classification: K Nearest Neighbors 0.9625
+Classification: Random Forest 0.975
+Classification: Decision Tree 0.9625
+Classification: Gaussian Naive Bayes 0.925
+Clustering: K Means {'algorithm': 'K Means', 'clusters': 5, 'silhouette': 0.5546571631111091, 'davies_bouldin': 0.5722356162263352, 'calinski_harabasz': 248.64932001536357}
+Clustering: Agglomerative Ward {'algorithm': 'Agglomerative Ward', 'clusters': 5, 'silhouette': 0.5538089226688662, 'davies_bouldin': 0.5778621190740154, 'calinski_harabasz': 244.41032586596822}
+Clustering: Gaussian Mixture {'algorithm': 'Gaussian Mixture', 'clusters': 5, 'silhouette': 0.5536892843811245, 'davies_bouldin': 0.5760100302410824, 'calinski_harabasz': 244.9401969858632}
+SELECTED Histogram Gradient Boosting K Nearest Neighbors K Means

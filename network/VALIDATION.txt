@@ -1,0 +1,14 @@
+Validation performed 12 November 2026
+
+Python 3.12, Linux
+9 unittest cases passed.
+5 default-port localhost HTTP requests and 5 UDP echoes completed.
+Dashboard search callback checked in Node with DOM stubs:
+HTTP -> 2 rows, 9999 -> 4 rows, empty query -> 16 rows, no match -> 0.
+Browser rendering and Wireshark live capture were not verified here.
+PDF: 10 pages, rendered and visually inspected.
+
+Synthetic fixture summary:
+16 packets; 987 frame wire bytes; 1.5 seconds; 5264 bit/s.
+Exclusive labels: TCP 8, HTTP 2, UDP 4, ICMP 2.
+Transport counts: TCP 10, UDP 4, ICMP 2.

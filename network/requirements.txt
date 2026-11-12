@@ -1,0 +1,2 @@
+# Python 3.10 or newer. No third-party Python packages are required.
+# Install Wireshark separately for live capture and PCAPNG conversion.

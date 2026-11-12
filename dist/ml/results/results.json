@@ -1,0 +1,1288 @@
+{
+  "seed": 42,
+  "environment": {
+    "python": "3.12.14",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "datasets": {
+    "insurance_pre.csv": {
+      "rows": 1338,
+      "columns": [
+        "age",
+        "sex",
+        "bmi",
+        "children",
+        "smoker",
+        "charges"
+      ],
+      "missing": 0,
+      "sha256": "5df9a43aa6ef121256324ff8c908617cbeb207ca2505ff75ccd3ef95639ee594"
+    },
+    "Mall_Customers.csv": {
+      "rows": 200,
+      "columns": [
+        "CustomerID",
+        "Genre",
+        "Age",
+        "Annual Income (k$)",
+        "Spending Score (1-100)"
+      ],
+      "missing": 0,
+      "sha256": "6cbb50329b1162558215870aa1be398aed593805483385066a95549d454096cb"
+    },
+    "Social_Network_Ads.csv": {
+      "rows": 400,
+      "columns": [
+        "User ID",
+        "Gender",
+        "Age",
+        "EstimatedSalary",
+        "Purchased"
+      ],
+      "missing": 0,
+      "sha256": "0904954f013068b32ce10606bb26ef45da020732cdd48d0f1d61f4bcc14b3742"
+    }
+  },
+  "regression": [
+    {
+      "algorithm": "AdaBoost",
+      "cv_rmse": 5100.432725695178,
+      "cv_std": 119.3417155919218,
+      "test_rmse": 4986.998349988725,
+      "test_mae": 4187.392342448305,
+      "test_r2": 0.8646566976030368,
+      "parameters": {
+        "model__learning_rate": 0.05,
+        "model__n_estimators": 100
+      }
+    },
+    {
+      "algorithm": "Gradient Boosting",
+      "cv_rmse": 4589.387983312514,
+      "cv_std": 160.53389481443722,
+      "test_rmse": 4289.573065285522,
+      "test_mae": 2524.3323939844445,
+      "test_r2": 0.8998648715162536,
+      "parameters": {
+        "model__learning_rate": 0.05,
+        "model__max_depth": 2,
+        "model__n_estimators": 200
+      }
+    },
+    {
+      "algorithm": "Histogram Gradient Boosting",
+      "cv_rmse": 4577.265246106655,
+      "cv_std": 157.34498019659188,
+      "test_rmse": 4287.264250704026,
+      "test_mae": 2496.6784747166093,
+      "test_r2": 0.8999726357261674,
+      "parameters": {
+        "model__learning_rate": 0.05,
+        "model__max_iter": 100,
+        "model__max_leaf_nodes": 7
+      }
+    }
+  ],
+  "classification": [
+    {
+      "algorithm": "Logistic Regression",
+      "cv_accuracy": 0.8190277777777777,
+      "cv_std": 0.035402638834128614,
+      "test_accuracy": 0.8375,
+      "test_precision": 0.9,
+      "test_recall": 0.6206896551724138,
+      "test_f1": 0.7346938775510204,
+      "test_roc_auc": 0.9303583502366464,
+      "confusion_matrix": [
+        [
+          49,
+          2
+        ],
+        [
+          11,
+          18
+        ]
+      ],
+      "parameters": {
+        "model__C": 0.1
+      }
+    },
+    {
+      "algorithm": "RBF SVM",
+      "cv_accuracy": 0.8907119963369963,
+      "cv_std": 0.0088040550934195,
+      "test_accuracy": 0.9625,
+      "test_precision": 0.9333333333333333,
+      "test_recall": 0.9655172413793104,
+      "test_f1": 0.9491525423728814,
+      "test_roc_auc": 0.9722785665990534,
+      "confusion_matrix": [
+        [
+          49,
+          2
+        ],
+        [
+          1,
+          28
+        ]
+      ],
+      "parameters": {
+        "model__C": 1,
+        "model__gamma": "scale"
+      }
+    },
+    {
+      "algorithm": "K Nearest Neighbors",
+      "cv_accuracy": 0.9032615995115995,
+      "cv_std": 0.014299242437537494,
+      "test_accuracy": 0.9625,
+      "test_precision": 0.9333333333333333,
+      "test_recall": 0.9655172413793104,
+      "test_f1": 0.9491525423728814,
+      "test_roc_auc": 0.9726166328600406,
+      "confusion_matrix": [
+        [
+          49,
+          2
+        ],
+        [
+          1,
+          28
+        ]
+      ],
+      "parameters": {
+        "model__n_neighbors": 11
+      }
+    },
+    {
+      "algorithm": "Random Forest",
+      "cv_accuracy": 0.8875869963369963,
+      "cv_std": 0.014655165068814233,
+      "test_accuracy": 0.975,
+      "test_precision": 0.9354838709677419,
+      "test_recall": 1.0,
+      "test_f1": 0.9666666666666667,
+      "test_roc_auc": 0.982420554428668,
+      "confusion_matrix": [
+        [
+          49,
+          2
+        ],
+        [
+          0,
+          29
+        ]
+      ],
+      "parameters": {
+        "model__max_depth": null,
+        "model__min_samples_leaf": 3
+      }
+    },
+    {
+      "algorithm": "Decision Tree",
+      "cv_accuracy": 0.8874366605616606,
+      "cv_std": 0.0306462872827472,
+      "test_accuracy": 0.9625,
+      "test_precision": 0.90625,
+      "test_recall": 1.0,
+      "test_f1": 0.9508196721311475,
+      "test_roc_auc": 0.9763353617308992,
+      "confusion_matrix": [
+        [
+          48,
+          3
+        ],
+        [
+          0,
+          29
+        ]
+      ],
+      "parameters": {
+        "model__max_depth": 2,
+        "model__min_samples_leaf": 3
+      }
+    },
+    {
+      "algorithm": "Gaussian Naive Bayes",
+      "cv_accuracy": 0.8688850732600732,
+      "cv_std": 0.020497441170228115,
+      "test_accuracy": 0.925,
+      "test_precision": 0.9259259259259259,
+      "test_recall": 0.8620689655172413,
+      "test_f1": 0.8928571428571429,
+      "test_roc_auc": 0.9770114942528736,
+      "confusion_matrix": [
+        [
+          49,
+          2
+        ],
+        [
+          4,
+          25
+        ]
+      ],
+      "parameters": {
+        "model__var_smoothing": 1e-09
+      }
+    }
+  ],
+  "clustering": [
+    {
+      "algorithm": "K Means",
+      "clusters": 5,
+      "silhouette": 0.5546571631111091,
+      "davies_bouldin": 0.5722356162263352,
+      "calinski_harabasz": 248.64932001536357
+    },
+    {
+      "algorithm": "Agglomerative Ward",
+      "clusters": 5,
+      "silhouette": 0.5538089226688662,
+      "davies_bouldin": 0.5778621190740154,
+      "calinski_harabasz": 244.41032586596822
+    },
+    {
+      "algorithm": "Gaussian Mixture",
+      "clusters": 5,
+      "silhouette": 0.5536892843811245,
+      "davies_bouldin": 0.5760100302410824,
+      "calinski_harabasz": 244.9401969858632
+    }
+  ],
+  "insurance_duplicate_rows_removed": 1,
+  "regression_selected": "Histogram Gradient Boosting",
+  "regression_split": {
+    "train": 1069,
+    "test": 268,
+    "cv_folds": 5
+  },
+  "classification_selected": "K Nearest Neighbors",
+  "classification_split": {
+    "train": 320,
+    "test": 80,
+    "cv_folds": 5,
+    "feature_groups": 379,
+    "train_class_counts": {
+      "0": 206,
+      "1": 114
+    },
+    "test_class_counts": {
+      "0": 51,
+      "1": 29
+    },
+    "grouping": "Gender, Age, EstimatedSalary"
+  },
+  "clustering_selected": "K Means",
+  "clustering_features": [
+    "Annual Income (k$)",
+    "Spending Score (1-100)"
+  ],
+  "cluster_search_range": [
+    2,
+    8
+  ],
+  "mall_points": [
+    {
+      "income": 15,
+      "spending": 39,
+      "cluster": 4
+    },
+    {
+      "income": 15,
+      "spending": 81,
+      "cluster": 2
+    },
+    {
+      "income": 16,
+      "spending": 6,
+      "cluster": 4
+    },
+    {
+      "income": 16,
+      "spending": 77,
+      "cluster": 2
+    },
+    {
+      "income": 17,
+      "spending": 40,
+      "cluster": 4
+    },
+    {
+      "income": 17,
+      "spending": 76,
+      "cluster": 2
+    },
+    {
+      "income": 18,
+      "spending": 6,
+      "cluster": 4
+    },
+    {
+      "income": 18,
+      "spending": 94,
+      "cluster": 2
+    },
+    {
+      "income": 19,
+      "spending": 3,
+      "cluster": 4
+    },
+    {
+      "income": 19,
+      "spending": 72,
+      "cluster": 2
+    },
+    {
+      "income": 19,
+      "spending": 14,
+      "cluster": 4
+    },
+    {
+      "income": 19,
+      "spending": 99,
+      "cluster": 2
+    },
+    {
+      "income": 20,
+      "spending": 15,
+      "cluster": 4
+    },
+    {
+      "income": 20,
+      "spending": 77,
+      "cluster": 2
+    },
+    {
+      "income": 20,
+      "spending": 13,
+      "cluster": 4
+    },
+    {
+      "income": 20,
+      "spending": 79,
+      "cluster": 2
+    },
+    {
+      "income": 21,
+      "spending": 35,
+      "cluster": 4
+    },
+    {
+      "income": 21,
+      "spending": 66,
+      "cluster": 2
+    },
+    {
+      "income": 23,
+      "spending": 29,
+      "cluster": 4
+    },
+    {
+      "income": 23,
+      "spending": 98,
+      "cluster": 2
+    },
+    {
+      "income": 24,
+      "spending": 35,
+      "cluster": 4
+    },
+    {
+      "income": 24,
+      "spending": 73,
+      "cluster": 2
+    },
+    {
+      "income": 25,
+      "spending": 5,
+      "cluster": 4
+    },
+    {
+      "income": 25,
+      "spending": 73,
+      "cluster": 2
+    },
+    {
+      "income": 28,
+      "spending": 14,
+      "cluster": 4
+    },
+    {
+      "income": 28,
+      "spending": 82,
+      "cluster": 2
+    },
+    {
+      "income": 28,
+      "spending": 32,
+      "cluster": 4
+    },
+    {
+      "income": 28,
+      "spending": 61,
+      "cluster": 2
+    },
+    {
+      "income": 29,
+      "spending": 31,
+      "cluster": 4
+    },
+    {
+      "income": 29,
+      "spending": 87,
+      "cluster": 2
+    },
+    {
+      "income": 30,
+      "spending": 4,
+      "cluster": 4
+    },
+    {
+      "income": 30,
+      "spending": 73,
+      "cluster": 2
+    },
+    {
+      "income": 33,
+      "spending": 4,
+      "cluster": 4
+    },
+    {
+      "income": 33,
+      "spending": 92,
+      "cluster": 2
+    },
+    {
+      "income": 33,
+      "spending": 14,
+      "cluster": 4
+    },
+    {
+      "income": 33,
+      "spending": 81,
+      "cluster": 2
+    },
+    {
+      "income": 34,
+      "spending": 17,
+      "cluster": 4
+    },
+    {
+      "income": 34,
+      "spending": 73,
+      "cluster": 2
+    },
+    {
+      "income": 37,
+      "spending": 26,
+      "cluster": 4
+    },
+    {
+      "income": 37,
+      "spending": 75,
+      "cluster": 2
+    },
+    {
+      "income": 38,
+      "spending": 35,
+      "cluster": 4
+    },
+    {
+      "income": 38,
+      "spending": 92,
+      "cluster": 2
+    },
+    {
+      "income": 39,
+      "spending": 36,
+      "cluster": 4
+    },
+    {
+      "income": 39,
+      "spending": 61,
+      "cluster": 0
+    },
+    {
+      "income": 39,
+      "spending": 28,
+      "cluster": 4
+    },
+    {
+      "income": 39,
+      "spending": 65,
+      "cluster": 2
+    },
+    {
+      "income": 40,
+      "spending": 55,
+      "cluster": 0
+    },
+    {
+      "income": 40,
+      "spending": 47,
+      "cluster": 0
+    },
+    {
+      "income": 40,
+      "spending": 42,
+      "cluster": 0
+    },
+    {
+      "income": 40,
+      "spending": 42,
+      "cluster": 0
+    },
+    {
+      "income": 42,
+      "spending": 52,
+      "cluster": 0
+    },
+    {
+      "income": 42,
+      "spending": 60,
+      "cluster": 0
+    },
+    {
+      "income": 43,
+      "spending": 54,
+      "cluster": 0
+    },
+    {
+      "income": 43,
+      "spending": 60,
+      "cluster": 0
+    },
+    {
+      "income": 43,
+      "spending": 45,
+      "cluster": 0
+    },
+    {
+      "income": 43,
+      "spending": 41,
+      "cluster": 0
+    },
+    {
+      "income": 44,
+      "spending": 50,
+      "cluster": 0
+    },
+    {
+      "income": 44,
+      "spending": 46,
+      "cluster": 0
+    },
+    {
+      "income": 46,
+      "spending": 51,
+      "cluster": 0
+    },
+    {
+      "income": 46,
+      "spending": 46,
+      "cluster": 0
+    },
+    {
+      "income": 46,
+      "spending": 56,
+      "cluster": 0
+    },
+    {
+      "income": 46,
+      "spending": 55,
+      "cluster": 0
+    },
+    {
+      "income": 47,
+      "spending": 52,
+      "cluster": 0
+    },
+    {
+      "income": 47,
+      "spending": 59,
+      "cluster": 0
+    },
+    {
+      "income": 48,
+      "spending": 51,
+      "cluster": 0
+    },
+    {
+      "income": 48,
+      "spending": 59,
+      "cluster": 0
+    },
+    {
+      "income": 48,
+      "spending": 50,
+      "cluster": 0
+    },
+    {
+      "income": 48,
+      "spending": 48,
+      "cluster": 0
+    },
+    {
+      "income": 48,
+      "spending": 59,
+      "cluster": 0
+    },
+    {
+      "income": 48,
+      "spending": 47,
+      "cluster": 0
+    },
+    {
+      "income": 49,
+      "spending": 55,
+      "cluster": 0
+    },
+    {
+      "income": 49,
+      "spending": 42,
+      "cluster": 0
+    },
+    {
+      "income": 50,
+      "spending": 49,
+      "cluster": 0
+    },
+    {
+      "income": 50,
+      "spending": 56,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 47,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 54,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 53,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 48,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 52,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 42,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 51,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 55,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 41,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 44,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 57,
+      "cluster": 0
+    },
+    {
+      "income": 54,
+      "spending": 46,
+      "cluster": 0
+    },
+    {
+      "income": 57,
+      "spending": 58,
+      "cluster": 0
+    },
+    {
+      "income": 57,
+      "spending": 55,
+      "cluster": 0
+    },
+    {
+      "income": 58,
+      "spending": 60,
+      "cluster": 0
+    },
+    {
+      "income": 58,
+      "spending": 46,
+      "cluster": 0
+    },
+    {
+      "income": 59,
+      "spending": 55,
+      "cluster": 0
+    },
+    {
+      "income": 59,
+      "spending": 41,
+      "cluster": 0
+    },
+    {
+      "income": 60,
+      "spending": 49,
+      "cluster": 0
+    },
+    {
+      "income": 60,
+      "spending": 40,
+      "cluster": 0
+    },
+    {
+      "income": 60,
+      "spending": 42,
+      "cluster": 0
+    },
+    {
+      "income": 60,
+      "spending": 52,
+      "cluster": 0
+    },
+    {
+      "income": 60,
+      "spending": 47,
+      "cluster": 0
+    },
+    {
+      "income": 60,
+      "spending": 50,
+      "cluster": 0
+    },
+    {
+      "income": 61,
+      "spending": 42,
+      "cluster": 0
+    },
+    {
+      "income": 61,
+      "spending": 49,
+      "cluster": 0
+    },
+    {
+      "income": 62,
+      "spending": 41,
+      "cluster": 0
+    },
+    {
+      "income": 62,
+      "spending": 48,
+      "cluster": 0
+    },
+    {
+      "income": 62,
+      "spending": 59,
+      "cluster": 0
+    },
+    {
+      "income": 62,
+      "spending": 55,
+      "cluster": 0
+    },
+    {
+      "income": 62,
+      "spending": 56,
+      "cluster": 0
+    },
+    {
+      "income": 62,
+      "spending": 42,
+      "cluster": 0
+    },
+    {
+      "income": 63,
+      "spending": 50,
+      "cluster": 0
+    },
+    {
+      "income": 63,
+      "spending": 46,
+      "cluster": 0
+    },
+    {
+      "income": 63,
+      "spending": 43,
+      "cluster": 0
+    },
+    {
+      "income": 63,
+      "spending": 48,
+      "cluster": 0
+    },
+    {
+      "income": 63,
+      "spending": 52,
+      "cluster": 0
+    },
+    {
+      "income": 63,
+      "spending": 54,
+      "cluster": 0
+    },
+    {
+      "income": 64,
+      "spending": 42,
+      "cluster": 0
+    },
+    {
+      "income": 64,
+      "spending": 46,
+      "cluster": 0
+    },
+    {
+      "income": 65,
+      "spending": 48,
+      "cluster": 0
+    },
+    {
+      "income": 65,
+      "spending": 50,
+      "cluster": 0
+    },
+    {
+      "income": 65,
+      "spending": 43,
+      "cluster": 0
+    },
+    {
+      "income": 65,
+      "spending": 59,
+      "cluster": 0
+    },
+    {
+      "income": 67,
+      "spending": 43,
+      "cluster": 0
+    },
+    {
+      "income": 67,
+      "spending": 57,
+      "cluster": 0
+    },
+    {
+      "income": 67,
+      "spending": 56,
+      "cluster": 0
+    },
+    {
+      "income": 67,
+      "spending": 40,
+      "cluster": 0
+    },
+    {
+      "income": 69,
+      "spending": 58,
+      "cluster": 0
+    },
+    {
+      "income": 69,
+      "spending": 91,
+      "cluster": 1
+    },
+    {
+      "income": 70,
+      "spending": 29,
+      "cluster": 3
+    },
+    {
+      "income": 70,
+      "spending": 77,
+      "cluster": 1
+    },
+    {
+      "income": 71,
+      "spending": 35,
+      "cluster": 0
+    },
+    {
+      "income": 71,
+      "spending": 95,
+      "cluster": 1
+    },
+    {
+      "income": 71,
+      "spending": 11,
+      "cluster": 3
+    },
+    {
+      "income": 71,
+      "spending": 75,
+      "cluster": 1
+    },
+    {
+      "income": 71,
+      "spending": 9,
+      "cluster": 3
+    },
+    {
+      "income": 71,
+      "spending": 75,
+      "cluster": 1
+    },
+    {
+      "income": 72,
+      "spending": 34,
+      "cluster": 0
+    },
+    {
+      "income": 72,
+      "spending": 71,
+      "cluster": 1
+    },
+    {
+      "income": 73,
+      "spending": 5,
+      "cluster": 3
+    },
+    {
+      "income": 73,
+      "spending": 88,
+      "cluster": 1
+    },
+    {
+      "income": 73,
+      "spending": 7,
+      "cluster": 3
+    },
+    {
+      "income": 73,
+      "spending": 73,
+      "cluster": 1
+    },
+    {
+      "income": 74,
+      "spending": 10,
+      "cluster": 3
+    },
+    {
+      "income": 74,
+      "spending": 72,
+      "cluster": 1
+    },
+    {
+      "income": 75,
+      "spending": 5,
+      "cluster": 3
+    },
+    {
+      "income": 75,
+      "spending": 93,
+      "cluster": 1
+    },
+    {
+      "income": 76,
+      "spending": 40,
+      "cluster": 0
+    },
+    {
+      "income": 76,
+      "spending": 87,
+      "cluster": 1
+    },
+    {
+      "income": 77,
+      "spending": 12,
+      "cluster": 3
+    },
+    {
+      "income": 77,
+      "spending": 97,
+      "cluster": 1
+    },
+    {
+      "income": 77,
+      "spending": 36,
+      "cluster": 3
+    },
+    {
+      "income": 77,
+      "spending": 74,
+      "cluster": 1
+    },
+    {
+      "income": 78,
+      "spending": 22,
+      "cluster": 3
+    },
+    {
+      "income": 78,
+      "spending": 90,
+      "cluster": 1
+    },
+    {
+      "income": 78,
+      "spending": 17,
+      "cluster": 3
+    },
+    {
+      "income": 78,
+      "spending": 88,
+      "cluster": 1
+    },
+    {
+      "income": 78,
+      "spending": 20,
+      "cluster": 3
+    },
+    {
+      "income": 78,
+      "spending": 76,
+      "cluster": 1
+    },
+    {
+      "income": 78,
+      "spending": 16,
+      "cluster": 3
+    },
+    {
+      "income": 78,
+      "spending": 89,
+      "cluster": 1
+    },
+    {
+      "income": 78,
+      "spending": 1,
+      "cluster": 3
+    },
+    {
+      "income": 78,
+      "spending": 78,
+      "cluster": 1
+    },
+    {
+      "income": 78,
+      "spending": 1,
+      "cluster": 3
+    },
+    {
+      "income": 78,
+      "spending": 73,
+      "cluster": 1
+    },
+    {
+      "income": 79,
+      "spending": 35,
+      "cluster": 3
+    },
+    {
+      "income": 79,
+      "spending": 83,
+      "cluster": 1
+    },
+    {
+      "income": 81,
+      "spending": 5,
+      "cluster": 3
+    },
+    {
+      "income": 81,
+      "spending": 93,
+      "cluster": 1
+    },
+    {
+      "income": 85,
+      "spending": 26,
+      "cluster": 3
+    },
+    {
+      "income": 85,
+      "spending": 75,
+      "cluster": 1
+    },
+    {
+      "income": 86,
+      "spending": 20,
+      "cluster": 3
+    },
+    {
+      "income": 86,
+      "spending": 95,
+      "cluster": 1
+    },
+    {
+      "income": 87,
+      "spending": 27,
+      "cluster": 3
+    },
+    {
+      "income": 87,
+      "spending": 63,
+      "cluster": 1
+    },
+    {
+      "income": 87,
+      "spending": 13,
+      "cluster": 3
+    },
+    {
+      "income": 87,
+      "spending": 75,
+      "cluster": 1
+    },
+    {
+      "income": 87,
+      "spending": 10,
+      "cluster": 3
+    },
+    {
+      "income": 87,
+      "spending": 92,
+      "cluster": 1
+    },
+    {
+      "income": 88,
+      "spending": 13,
+      "cluster": 3
+    },
+    {
+      "income": 88,
+      "spending": 86,
+      "cluster": 1
+    },
+    {
+      "income": 88,
+      "spending": 15,
+      "cluster": 3
+    },
+    {
+      "income": 88,
+      "spending": 69,
+      "cluster": 1
+    },
+    {
+      "income": 93,
+      "spending": 14,
+      "cluster": 3
+    },
+    {
+      "income": 93,
+      "spending": 90,
+      "cluster": 1
+    },
+    {
+      "income": 97,
+      "spending": 32,
+      "cluster": 3
+    },
+    {
+      "income": 97,
+      "spending": 86,
+      "cluster": 1
+    },
+    {
+      "income": 98,
+      "spending": 15,
+      "cluster": 3
+    },
+    {
+      "income": 98,
+      "spending": 88,
+      "cluster": 1
+    },
+    {
+      "income": 99,
+      "spending": 39,
+      "cluster": 3
+    },
+    {
+      "income": 99,
+      "spending": 97,
+      "cluster": 1
+    },
+    {
+      "income": 101,
+      "spending": 24,
+      "cluster": 3
+    },
+    {
+      "income": 101,
+      "spending": 68,
+      "cluster": 1
+    },
+    {
+      "income": 103,
+      "spending": 17,
+      "cluster": 3
+    },
+    {
+      "income": 103,
+      "spending": 85,
+      "cluster": 1
+    },
+    {
+      "income": 103,
+      "spending": 23,
+      "cluster": 3
+    },
+    {
+      "income": 103,
+      "spending": 69,
+      "cluster": 1
+    },
+    {
+      "income": 113,
+      "spending": 8,
+      "cluster": 3
+    },
+    {
+      "income": 113,
+      "spending": 91,
+      "cluster": 1
+    },
+    {
+      "income": 120,
+      "spending": 16,
+      "cluster": 3
+    },
+    {
+      "income": 120,
+      "spending": 79,
+      "cluster": 1
+    },
+    {
+      "income": 126,
+      "spending": 28,
+      "cluster": 3
+    },
+    {
+      "income": 126,
+      "spending": 74,
+      "cluster": 1
+    },
+    {
+      "income": 137,
+      "spending": 18,
+      "cluster": 3
+    },
+    {
+      "income": 137,
+      "spending": 83,
+      "cluster": 1
+    }
+  ]
+}
