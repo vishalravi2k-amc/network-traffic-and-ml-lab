@@ -1,0 +1,13 @@
+Subject,Dataset,Task,Algorithm,Selection_Metric,Selection_Value,Evaluation_Metric,Evaluation_Value,Test_RMSE
+Machine Learning,insurance_pre.csv,Boosting (regression),AdaBoost,CV RMSE (lower better),5100.43,Test R2,0.8647,4987.00
+Machine Learning,insurance_pre.csv,Boosting (regression),Gradient Boosting,CV RMSE (lower better),4589.39,Test R2,0.8999,4289.57
+Machine Learning,insurance_pre.csv,Boosting (regression),Histogram Gradient Boosting,CV RMSE (lower better),4577.27,Test R2,0.9000,4287.26
+Machine Learning,Social_Network_Ads.csv,Classification,Logistic Regression,CV Accuracy (higher better),81.90%,Test accuracy,83.75%,
+Machine Learning,Social_Network_Ads.csv,Classification,RBF SVM,CV Accuracy (higher better),89.07%,Test accuracy,96.25%,
+Machine Learning,Social_Network_Ads.csv,Classification,K Nearest Neighbors,CV Accuracy (higher better),90.33%,Test accuracy,96.25%,
+Machine Learning,Social_Network_Ads.csv,Classification,Random Forest,CV Accuracy (higher better),88.76%,Test accuracy,97.50%,
+Machine Learning,Social_Network_Ads.csv,Classification,Decision Tree,CV Accuracy (higher better),88.74%,Test accuracy,96.25%,
+Machine Learning,Social_Network_Ads.csv,Classification,Gaussian Naive Bayes,CV Accuracy (higher better),86.89%,Test accuracy,92.50%,
+Machine Learning,Mall_Customers.csv,Clustering,K Means (k=5),Silhouette (higher better),0.5547,Davies-Bouldin (lower better),0.5722,
+Machine Learning,Mall_Customers.csv,Clustering,Agglomerative Ward (k=5),Silhouette (higher better),0.5538,Davies-Bouldin (lower better),0.5779,
+Machine Learning,Mall_Customers.csv,Clustering,Gaussian Mixture (k=5),Silhouette (higher better),0.5537,Davies-Bouldin (lower better),0.5760,
