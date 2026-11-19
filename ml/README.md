@@ -16,6 +16,12 @@ The uploaded datasets are used for separate tasks. Scores across tasks are not d
 
 All algorithms and exact results are in results/results.json and the three result CSVs. The website displays these saved outputs; training is performed in Python, not in the browser.
 
+## Graphs
+
+![Algorithm comparisons](results/algorithm_comparisons.png)
+
+See the [comparison report](COMPARISON_REPORT.md#graphs-and-worked-examples) for explanations, actual-versus-predicted charges, a confusion matrix, and customer clusters. Regenerate the overview with `python ml/plot_comparisons.py` after training.
+
 ## Reproduce
 
 Install the versions in requirements.txt, then from the repository root:

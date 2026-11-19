@@ -45,6 +45,39 @@ The three original datasets were used for three different learning tasks. The ex
 
 **Selected:** K Means, k=5 (silhouette 0.5547). A silhouette score is **not accuracy**. Clustering labels have no ground-truth class here.
 
+
+## Graphs and worked examples
+
+These graphs use the saved experimental results, not illustrative or invented scores.
+
+![Comparison of boosting RMSE, classification accuracy and clustering silhouette](results/algorithm_comparisons.png)
+
+- **Boosting:** lower RMSE means smaller prediction errors. Histogram Gradient Boosting is selected by training CV and has test R² 0.9000.
+- **Classification:** blue bars show training cross-validation accuracy; green bars show held-out test accuracy. KNN wins the CV comparison (90.33%); Random Forest has the highest observed test accuracy (97.50%). Model selection uses CV.
+- **Clustering:** K-Means has the highest silhouette (0.5547), with five clusters. The algorithms are very close; this small difference does not establish general superiority. Silhouette is not classification accuracy.
+
+### Example 1: Actual versus predicted insurance charges
+
+![Insurance held-out actual and predicted charges](results/insurance_predictions.png)
+
+Each dot represents one held-out record. Points near the dashed diagonal have predictions close to the actual charge. The vertical distance from that line shows prediction error. The 268 test records give an RMSE of 4287.26 in the dataset's units.
+
+### Example 2: Classification confusion matrix
+
+![KNN confusion matrix for the held-out advertisement records](results/ads_confusion_matrix.png)
+
+Rows are actual outcomes and columns are predicted outcomes. KNN correctly classifies 49 non-purchases and 28 purchases: **77/80 = 96.25% accuracy**. Two non-purchases are predicted as purchases, and one purchase is missed.
+
+### Example 3: Customer clusters
+
+![Five mall customer clusters by annual income and spending score](results/mall_clusters.png)
+
+Each dot is one customer; colors indicate K-Means cluster assignments. The graph illustrates groups such as high-income/high-spending and high-income/low-spending customers. These are exploratory descriptions, not known customer classes. Clustering used standardized income and spending, while the chart displays the original units.
+
+### Regenerate the graphs
+
+Run `python ml/train_compare.py` to recreate the three example charts and training outputs, then `python ml/plot_comparisons.py` to recreate the comparison overview from `results/results.json`. A [vector SVG](results/algorithm_comparisons.svg) is available for resizing in presentations.
+
 ## Submission checklist
 
 - [x] All three supplied original CSV datasets
