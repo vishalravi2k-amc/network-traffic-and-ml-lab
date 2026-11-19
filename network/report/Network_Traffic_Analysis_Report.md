@@ -10,11 +10,9 @@ Theme E<br/>Cryptography and Network Security<br/>Experiential Learning Task
 
 Submitted by<br/>**Gowthami.M**
 
-USN 1AM23CI042<br/>Roll number ____________________
+USN 1AM23CI042<br/>Roll number: 42
 
-Submitted to<br/>Faculty or guide ____________________
-
-Submission date ____________________
+Submitted to<br/>Guide: Kavya
 
 Python source code, sample packet capture and analysis outputs accompany this report. The reported sample measurements come from a constructed teaching capture. A live Wireshark procedure is included for the classroom demonstration.
 
