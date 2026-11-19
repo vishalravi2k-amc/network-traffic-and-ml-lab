@@ -55,3 +55,47 @@ The three original datasets were used for three different learning tasks. The ex
 - [ ] Present results to faculty and verify any course-specific report requirements
 
 **Important:** The three scores have different meanings and must not be ranked against one another. No cross-task “best overall algorithm” is statistically meaningful.
+
+
+## Reproduction verification — 19 November 2026
+
+Re-executed the repository's `ml/train_compare.py` using the three repository CSV datasets. The run completed successfully (exit code 0). All numeric values in the regression, classification and clustering result tables matched the previously committed results within `rtol=1e-10, atol=1e-10`. All 12 algorithm comparisons and all three selected model families were reproduced.
+
+Environment: Python 3.12.14; scikit-learn 1.8.0; NumPy 2.3.5; pandas 2.2.3; matplotlib 3.10.8; joblib 1.5.3. Seed: 42. The script's split-disjointness, saved-score and model-reload assertions passed.
+
+Reproduction command (from the repository root):
+
+```sh
+python -m pip install -r ml/requirements.txt
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python ml/train_compare.py
+```
+
+Dataset fingerprint clarification: the existing `results.json` records SHA-256 fingerprints of the original CRLF files. Git stores these CSV files with LF line endings, so raw byte fingerprints differ; converting the repository files back to CRLF reproduces all three original fingerprints. The data values are unchanged. Repository LF fingerprints are:
+
+| Dataset | SHA-256 |
+|---|---|
+| insurance_pre.csv | `e6e380c6743eb3f9aa35f5815d49b971b2cdc5811ebc561f3fbee283a85ac743` |
+| Mall_Customers.csv | `3b3501663511db1a3db41e6e8138b4f59e40217ec3b62fa3713b0563836aecfa` |
+| Social_Network_Ads.csv | `64783cdaf0ca192b2fa54ae5a5a27aa201ba9156d8a0f67afc7cadd8b7784c89` |
+
+Console output from the verification run:
+
+```text
+Regression: AdaBoost 4986.998349988725
+Regression: Gradient Boosting 4289.573065285522
+Regression: Histogram Gradient Boosting 4287.264250704026
+Classification: Logistic Regression 0.8375
+Classification: RBF SVM 0.9625
+Classification: K Nearest Neighbors 0.9625
+Classification: Random Forest 0.975
+Classification: Decision Tree 0.9625
+Classification: Gaussian Naive Bayes 0.925
+Clustering: K Means {'algorithm': 'K Means', 'clusters': 5, 'silhouette': 0.5546571631111091, 'davies_bouldin': 0.5722356162263352, 'calinski_harabasz': 248.64932001536357}
+Clustering: Agglomerative Ward {'algorithm': 'Agglomerative Ward', 'clusters': 5, 'silhouette': 0.5538089226688662, 'davies_bouldin': 0.5778621190740154, 'calinski_harabasz': 244.41032586596822}
+Clustering: Gaussian Mixture {'algorithm': 'Gaussian Mixture', 'clusters': 5, 'silhouette': 0.5536892843811245, 'davies_bouldin': 0.5760100302410824, 'calinski_harabasz': 244.9401969858632}
+SELECTED Histogram Gradient Boosting K Nearest Neighbors K Means
+```
+
+### Opening this submission
+
+This repository was private at verification time. Open it while signed in as its owner, `vishalravi2k-amc`, or as an invited collaborator. A viewer without permission may see “Could not resolve to a Repository” or a 404 even when the URL is correct. Faculty access requires a collaborator invitation or an owner-approved change to public visibility.
